@@ -20,8 +20,7 @@ msg['Subject'] = "Test Email" + args.subject
 msg['From'] = args.to
 msg['To'] = args.sender
 
-server = smtplib.SMTP(args.server, 587)
-server.connect()
+server = smtplib.SMTP(args.server, args.port)
 server.starttls()
 server.login(args.user, args.password)
 server.send_message(msg)
