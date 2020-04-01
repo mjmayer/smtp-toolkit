@@ -17,8 +17,8 @@ args = parser.parse_args()
 msg = EmailMessage()
 msg.set_content("Email Message Body")
 msg['Subject'] = "Test Email" + args.subject
-msg['From'] = args.to
-msg['To'] = args.sender
+msg['From'] = args.sender
+msg['To'] = args.to
 
 server = smtplib.SMTP(args.server, args.port)
 server.starttls()
@@ -27,5 +27,5 @@ server.send_message(msg)
 server.quit()
 
 print("To: " + args.to + "\r\n" + "From: " + args.sender + "\r\n" + "Subject: "
-     + args.subject + "\r\n" + "Inbox: " + "https://mailsa.com/inbox/" +
+     + args.subject + "\r\n" + "Inbox: " + "https://mailsac.com/inbox/" +
      args.to)
